@@ -1,0 +1,27 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+df = pd.read_csv("data/ECLEARNIX.csv")
+
+# 1. Course Completion Distribution
+sns.countplot(x='Course_Completed', data=df)
+plt.title("Course Completion (0 = Not Completed, 1 = Completed)")
+plt.show()
+
+# 2. Region-wise Event Participation
+sns.countplot(x='Region', hue='Registered_for_Event', data=df)
+plt.title("Event Registration by Region")
+plt.xticks(rotation=45)
+plt.show()
+
+# 3. Feedback Rating Distribution
+sns.histplot(df['Feedback_Rating'], bins=5, kde=True)
+plt.title("Feedback Rating Distribution")
+plt.show()
+
+# 4. Average Time Spent by Department
+df.groupby('Department')['Time_Spent_Total_Minutes'].mean().sort_values().plot(kind='barh')
+plt.title("Avg Time Spent by Department")
+plt.xlabel("Minutes")
+plt.show()
