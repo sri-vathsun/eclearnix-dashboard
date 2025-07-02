@@ -30,16 +30,6 @@ An interactive data dashboard built using **Streamlit** and **Plotly** to analyz
 
 ---
 
-## 📂 Folder Structure
-
-eclearnix_project/
-├── dashboard/
-│ └── streamlit_app.py
-├── data/
-│ ├── ECLEARNIX.csv
-│ └── ECLEARNIX_clustered.csv (optional)
-└── README.md
-
 
 
 
